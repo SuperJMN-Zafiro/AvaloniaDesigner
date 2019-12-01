@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDesigner", "AvaloniaDesigner\AvaloniaDesigner.csproj", "{622C4303-2568-4523-A121-DDC4D5EDB865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaDesigner", "AvaloniaDesigner\AvaloniaDesigner.csproj", "{622C4303-2568-4523-A121-DDC4D5EDB865}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Zafiro", "Zafiro", "{176FE1DB-8DC1-4FDF-9063-55A783BF5FDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zafiro.Avalonia", "Zafiro\Source\Zafiro.Avalonia\Zafiro.Avalonia.csproj", "{7C00101E-1A1B-45DB-ADB6-134C6DC4E249}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zafiro.Avalonia.Design", "Zafiro\Source\Zafiro.Avalonia.Design\Zafiro.Avalonia.Design.csproj", "{2FFC0E38-5F3A-4503-8BC1-C518DAADC4E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zafiro.Core", "Zafiro\Source\Zafiro.Core\Zafiro.Core.csproj", "{415220FE-B83A-4B34-B135-52FEF1B6F649}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,26 @@ Global
 		{622C4303-2568-4523-A121-DDC4D5EDB865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{622C4303-2568-4523-A121-DDC4D5EDB865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{622C4303-2568-4523-A121-DDC4D5EDB865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C00101E-1A1B-45DB-ADB6-134C6DC4E249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C00101E-1A1B-45DB-ADB6-134C6DC4E249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C00101E-1A1B-45DB-ADB6-134C6DC4E249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C00101E-1A1B-45DB-ADB6-134C6DC4E249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FFC0E38-5F3A-4503-8BC1-C518DAADC4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFC0E38-5F3A-4503-8BC1-C518DAADC4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFC0E38-5F3A-4503-8BC1-C518DAADC4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFC0E38-5F3A-4503-8BC1-C518DAADC4E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415220FE-B83A-4B34-B135-52FEF1B6F649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415220FE-B83A-4B34-B135-52FEF1B6F649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415220FE-B83A-4B34-B135-52FEF1B6F649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415220FE-B83A-4B34-B135-52FEF1B6F649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C00101E-1A1B-45DB-ADB6-134C6DC4E249} = {176FE1DB-8DC1-4FDF-9063-55A783BF5FDD}
+		{2FFC0E38-5F3A-4503-8BC1-C518DAADC4E4} = {176FE1DB-8DC1-4FDF-9063-55A783BF5FDD}
+		{415220FE-B83A-4B34-B135-52FEF1B6F649} = {176FE1DB-8DC1-4FDF-9063-55A783BF5FDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6193B174-1AD7-46D0-8006-691779D069F3}

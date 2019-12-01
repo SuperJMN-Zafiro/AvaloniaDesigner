@@ -4,5 +4,7 @@
     <Application.Styles>
         <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
+        <StyleInclude Source="avares://Zafiro.Avalonia/Themes/Default.xaml" />
+        <StyleInclude Source="avares://Zafiro.Avalonia.Design/Themes/Default.xaml" />
     </Application.Styles>
 </Application>
