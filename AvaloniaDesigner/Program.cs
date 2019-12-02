@@ -2,6 +2,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Logging.Serilog;
+using Avalonia.ReactiveUI;
 
 namespace AvaloniaDesigner
 {
@@ -15,6 +16,7 @@ namespace AvaloniaDesigner
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
+                .UseReactiveUI()
                 .UsePlatformDetect()
                 .LogToDebug();
 
@@ -22,7 +24,11 @@ namespace AvaloniaDesigner
         // container, etc.
         private static void AppMain(Application app, string[] args)
         {
-            app.Run(new MainWindow());
+            var mainWindow = new MainWindow();
+            Composition.Window = mainWindow;
+            mainWindow.DataContext = Composition.Root;
+
+            app.Run(mainWindow);
         }
     }
 }

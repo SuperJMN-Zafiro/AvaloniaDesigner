@@ -1,0 +1,37 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaDesigner.Parts.Graphics.TextBoxControl">
+
+    <Grid Background="{Binding TintedBackground, Converter={StaticResource ColorToBrushConverter}}">
+        
+        <Border Background="Black"
+                IsVisible="{Binding Path=Shadow.Distance, Converter={StaticResource ZeroToCollapsedConverter}}">
+            <Border.RenderTransform>
+                <TranslateTransform
+                    X="{Binding Shadow.ShadowX, Mode=OneWay}"
+                    Y="{Binding Shadow.ShadowY, Mode=OneWay}" />
+
+            </Border.RenderTransform>
+        </Border>
+        <TextBox
+            ScrollViewer.VerticalScrollBarVisibility="Disabled"
+            TextWrapping="Wrap"
+            Background="{Binding TintedBackground, Converter={StaticResource ColorToBrushConverter}}"
+            AcceptsReturn="True" Padding="0" BorderThickness="0"
+            Text="{Binding Text, Mode=TwoWay}">
+        </TextBox>
+        <!--<Popup x:Name="Popup"
+               VerticalOffset="{Binding ElementName=Proxy, Path=ActualHeightValue, Converter={StaticResource VerticalOffsetConverter}}">
+            <controls:TextToolbar x:Name="Toolbar"
+                                  Editor="{Binding ElementName=Editor}"
+                                  IsEnabled="True"
+                                  Format="RichText"
+                                  FontSize="10"
+                                  UseURIChecker="True"
+                                  Background="#4C4F4F4F" />
+        </Popup>-->
+    </Grid>
+</UserControl>

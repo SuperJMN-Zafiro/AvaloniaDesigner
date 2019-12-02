@@ -4,7 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:objEditor="clr-namespace:Zafiro.Avalonia.ObjEditor;assembly=Zafiro.Avalonia"
-             x:Class="AvaloniaDesigner.Parts.PropertiesControl">
+             xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
+             x:Class="AvaloniaDesigner.Parts.PropertiesControl"
+             d:DataContext="{d:DesignInstance viewModels:Project}">
     <UserControl.Styles>
         <Style Selector="HeaderedContentControl">
             <Setter Property="Template">
@@ -21,7 +23,11 @@
             </Setter>
         </Style>
     </UserControl.Styles>
+
+    <!--TODO: Fix toolbox selection-->
+    <!--SelectedItems="{Binding SelectedDocument.SelectedItems}"-->
+
     <HeaderedContentControl Header="Properties">
-        <objEditor:ObjectEditor Margin="4" SelectedItems="{Binding ElementName=DesignerSurface, Path=SelectedItems}"></objEditor:ObjectEditor>
+        <objEditor:ObjectEditor Margin="4" ></objEditor:ObjectEditor>
     </HeaderedContentControl>
 </UserControl>
