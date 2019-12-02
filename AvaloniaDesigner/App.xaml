@@ -6,5 +6,18 @@
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
         <StyleInclude Source="avares://Zafiro.Avalonia/Themes/Default.xaml" />
         <StyleInclude Source="avares://Zafiro.Avalonia.Design/Themes/Default.xaml" />
+
+        <Style Selector="HeaderedContentControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <StackPanel Spacing="8">
+                            <ContentPresenter Content="{TemplateBinding Header}" />
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Styles>
 </Application>
