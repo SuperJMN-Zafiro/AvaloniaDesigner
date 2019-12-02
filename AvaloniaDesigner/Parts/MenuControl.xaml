@@ -1,0 +1,23 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaDesigner.Parts.MenuControl">
+    <Menu>
+        <MenuItem Header="File">
+            <MenuItem Header="New" Command="{Binding New}" />
+            <MenuItem Header="Open" Command="{Binding Load}" />
+            <MenuItem Header="Import" Command="{Binding ShowImport}" />
+            <MenuItem Header="Save" Command="{Binding Save}" />
+        </MenuItem>
+        <MenuItem Header="Object">
+            <MenuItem Header="Alignment">
+                <MenuItem Header="Align to left" Command="{Binding DesignContext.DesignCommandsHost.AlignLeft}" />
+                <MenuItem Header="Align to right" Command="{Binding DesignContext.DesignCommandsHost.AlignRight}" />
+                <MenuItem Header="Align to top" Command="{Binding DesignContext.DesignCommandsHost.AlignTop}" />
+                <MenuItem Header="Align to bottom" Command="{Binding DesignContext.DesignCommandsHost.AlignBottom}" />
+            </MenuItem>
+        </MenuItem>
+    </Menu>
+</UserControl>

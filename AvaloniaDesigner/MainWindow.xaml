@@ -4,78 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaDesigner.MainWindow"
-        xmlns:ds="clr-namespace:Zafiro.Avalonia.Design;assembly=Zafiro.Avalonia.Design"
         xmlns:sample="clr-namespace:AvaloniaDesigner"
-        xmlns:objEditor="clr-namespace:Zafiro.Avalonia.ObjEditor;assembly=Zafiro.Avalonia"
+        xmlns:parts="clr-namespace:AvaloniaDesigner.Parts"
         Title="Avalonia Designer">
-
-  <Window.Resources>
-    <sample:UriToBitmapConverter x:Key="UriToBitmapConverter" />
-  </Window.Resources>
 
   <Window.DataContext>
     <sample:WindowViewModel />
   </Window.DataContext>
 
-  <Window.DataTemplates>
-    <DataTemplate DataType="sample:Picture">
-      <Image Stretch="Fill" Source="{Binding Source, Converter={StaticResource UriToBitmapConverter}}" />
-    </DataTemplate>
-    <DataTemplate DataType="sample:Text">
-      <TextBox Text="{Binding Value, Mode=TwoWay}" />
-    </DataTemplate>
-  </Window.DataTemplates>
-
-  <Grid ColumnDefinitions="* 300" RowDefinitions="Auto *">
-    <Menu>
-      <MenuItem Header="File">
-        <MenuItem Header="New" Command="{Binding New}" />
-        <MenuItem Header="Open" Command="{Binding Load}" />
-        <MenuItem Header="Import" Command="{Binding ShowImport}" />
-        <MenuItem Header="Save" Command="{Binding Save}" />
-      </MenuItem>
-      <MenuItem Header="Object">
-        <MenuItem Header="Alignment">
-          <MenuItem Header="Align to left" Command="{Binding DesignContext.DesignCommandsHost.AlignLeft}" />
-          <MenuItem Header="Align to right" Command="{Binding DesignContext.DesignCommandsHost.AlignRight}" />
-          <MenuItem Header="Align to top" Command="{Binding DesignContext.DesignCommandsHost.AlignTop}" />
-          <MenuItem Header="Align to bottom" Command="{Binding DesignContext.DesignCommandsHost.AlignBottom}" />
-        </MenuItem>
-      </MenuItem>
-    </Menu>
-    <ds:DesignerSurface
-        x:Name="DesignerSurface"
-        Grid.Row="1"
-        Grid.ColumnSpan="2"
-        Items="{Binding Objects}"
-        Background="White"
-        LeftBinding="{Binding Left}"
-        TopBinding="{Binding Top}"
-        WidthBinding="{Binding Width}"
-        HeightBinding="{Binding Height}" />
-
-    <UserControl Grid.Column="1" Grid.RowSpan="2" Padding="4">
-      <UserControl.Styles>
-        <Style Selector="HeaderedContentControl">
-          <Setter Property="Template">
-            <Setter.Value>
-              <ControlTemplate>
-                <Border BorderBrush="Black" Background="White" BorderThickness="1">
-                <Grid RowDefinitions="Auto *">
-                  <ContentPresenter Padding="5" HorizontalContentAlignment="Center" TextBlock.FontWeight="Bold" Background="LightBlue" Content="{TemplateBinding Header}" />
-                  <ContentPresenter Grid.Row="1" Content="{TemplateBinding Content}" />
-                </Grid>
-                </Border>
-              </ControlTemplate>
-            </Setter.Value>
-          </Setter>
-        </Style>
-      </UserControl.Styles>
-      <HeaderedContentControl Header="Properties">
-        <objEditor:ObjectEditor Margin="4" SelectedItems="{Binding ElementName=DesignerSurface, Path=SelectedItems}"></objEditor:ObjectEditor>
-      </HeaderedContentControl>
-    </UserControl>
-
+  <Grid ColumnDefinitions="400 *">
+    <parts:MainSurfaceControl Grid.ColumnSpan="2" />        
   </Grid>
 
 </Window>
