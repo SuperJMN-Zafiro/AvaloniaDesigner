@@ -36,11 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Zafiro\Source\Zafiro.Avalonia.Design\Zafiro.Avalonia.Design.csproj" />
-    <ProjectReference Include="..\Zafiro\Source\Zafiro.Avalonia\Zafiro.Avalonia.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Parts\MenuControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -56,6 +51,11 @@
     <EmbeddedResource Include="Parts\PropertiesControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SuppaDesigner\Zafiro\Source\Zafiro.Avalonia.Design\Zafiro.Avalonia.Design.csproj" />
+    <ProjectReference Include="..\SuppaDesigner\Zafiro\Source\Zafiro.Avalonia\Zafiro.Avalonia.csproj" />
   </ItemGroup>
 
 </Project>
