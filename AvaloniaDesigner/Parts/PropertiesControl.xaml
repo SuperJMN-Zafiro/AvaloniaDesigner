@@ -24,10 +24,8 @@
         </Style>
     </UserControl.Styles>
 
-    <!--TODO: Fix toolbox selection-->
-    <!--SelectedItems="{Binding SelectedDocument.SelectedItems}"-->
-
     <HeaderedContentControl Header="Properties">
-        <objEditor:ObjectEditor Margin="4" ></objEditor:ObjectEditor>
+        <objEditor:ObjectEditor Margin="4" SelectedItems="{Binding SelectedDocument.SelectedItems}" />
     </HeaderedContentControl>
+
 </UserControl>
