@@ -12,28 +12,7 @@
     </AvaloniaResource>
     <AvaloniaResource Include="Assets\*" />
   </ItemGroup>
-  <ItemGroup>
-    <AvaloniaResource Remove="Parts\EditorControl.xaml" />
-    <AvaloniaResource Remove="Parts\Graphics\EllipseControl.xaml" />
-    <AvaloniaResource Remove="Parts\Graphics\NumericFieldControl.xaml" />
-    <AvaloniaResource Remove="Parts\Graphics\RectangleControl.xaml" />
-    <AvaloniaResource Remove="Parts\Graphics\TextBoxControl.xaml" />
-    <AvaloniaResource Remove="Parts\Graphics\TextFieldControl.xaml" />
-    <AvaloniaResource Remove="Parts\MainSurfaceControl.xaml" />
-    <AvaloniaResource Remove="Parts\MenuControl.xaml" />
-    <AvaloniaResource Remove="Parts\PropertiesControl.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Parts\EditorControl.xaml" />
-    <None Remove="Parts\Graphics\EllipseControl.xaml" />
-    <None Remove="Parts\Graphics\NumericFieldControl.xaml" />
-    <None Remove="Parts\Graphics\RectangleControl.xaml" />
-    <None Remove="Parts\Graphics\TextBoxControl.xaml" />
-    <None Remove="Parts\Graphics\TextFieldControl.xaml" />
-    <None Remove="Parts\MainSurfaceControl.xaml" />
-    <None Remove="Parts\MenuControl.xaml" />
-    <None Remove="Parts\PropertiesControl.xaml" />
-  </ItemGroup>
+
   <ItemGroup>
     <Content Include="Assets\block.png" />
     <Content Include="Assets\goomba.png" />
