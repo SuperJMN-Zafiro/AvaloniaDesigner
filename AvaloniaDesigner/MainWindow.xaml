@@ -6,13 +6,12 @@
         x:Class="AvaloniaDesigner.MainWindow"
         xmlns:sample="clr-namespace:AvaloniaDesigner"
         xmlns:parts="clr-namespace:AvaloniaDesigner.Parts"
-        Title="Avalonia Designer">
+        Title="Avalonia Designer" >
 
-  <Window.DataContext>
-    <sample:WindowViewModel />
-  </Window.DataContext>
+    <!--TODO: Add use this again when the are good ways to get the current Window-->
+    <!--DataContext="{Binding Source={StaticResource Composition}, Path=Root}"-->
 
-  <Grid ColumnDefinitions="400 *">
+    <Grid ColumnDefinitions="400 *">
     <parts:MainSurfaceControl Grid.ColumnSpan="2" />        
   </Grid>
 

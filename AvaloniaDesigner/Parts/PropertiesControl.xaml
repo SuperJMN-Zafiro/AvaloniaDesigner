@@ -3,8 +3,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:objEditor="clr-namespace:Zafiro.Avalonia.ObjEditor;assembly=Zafiro.Avalonia"
-             x:Class="AvaloniaDesigner.Parts.PropertiesControl">
+             xmlns:oe="clr-namespace:Zafiro.Avalonia.ObjectEditor;assembly=Zafiro.Avalonia"
+             xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
+             xmlns:coe="clr-namespace:Zafiro.Core.ObjectEditor;assembly=Zafiro.Core"
+             x:Class="AvaloniaDesigner.Parts.PropertiesControl"
+             d:DataContext="{d:DesignInstance viewModels:Project}">
     <UserControl.Styles>
         <Style Selector="HeaderedContentControl">
             <Setter Property="Template">
@@ -21,7 +24,43 @@
             </Setter>
         </Style>
     </UserControl.Styles>
-    <HeaderedContentControl Header="Properties">
-        <objEditor:ObjectEditor Margin="4" SelectedItems="{Binding ElementName=DesignerSurface, Path=SelectedItems}"></objEditor:ObjectEditor>
-    </HeaderedContentControl>
+
+    <oe:ObjectEditor Margin="4" SelectedItems="{Binding SelectedDocument.SelectedItems}">
+
+        <oe:ObjectEditor.Editors>
+            <oe:EditorCollection>
+                <oe:Editor>
+                    <oe:Editor.Template>
+                        <DataTemplate DataType="oe:PropertyItem">
+                            <Slider Minimum="0" Maximum="1" LargeChange="0.2" TickFrequency="0.1" Value="{Binding Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </oe:Editor.Template>
+                    <oe:Editor.Key>
+                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="BackgroundTint" />
+                    </oe:Editor.Key>
+                </oe:Editor>
+                <oe:Editor>
+                    <oe:Editor.Template>
+                        <DataTemplate DataType="oe:PropertyItem">
+                            <Slider Value="{Binding Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </oe:Editor.Template>
+                    <oe:Editor.Key>
+                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="StrokeThickness" />
+                    </oe:Editor.Key>
+                </oe:Editor>
+                <oe:Editor>
+                    <oe:Editor.Template>
+                        <DataTemplate DataType="oe:PropertyItem">
+                            <Border Background="{Binding Value, Converter={StaticResource ColorToBrushConverter}}"></Border>
+                        </DataTemplate>
+                    </oe:Editor.Template>
+                    <oe:Editor.Key>
+                        <coe:EditorKey TargetTypeString="Designer.Domain.Models.Color, Designer.Domain.Models"  />
+                    </oe:Editor.Key>
+                </oe:Editor>
+            </oe:EditorCollection>
+        </oe:ObjectEditor.Editors>
+    </oe:ObjectEditor>
+
 </UserControl>

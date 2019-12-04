@@ -2,8 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:core="clr-namespace:Designer.Core;assembly=Designer.Core"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AvaloniaDesigner.Parts.MenuControl">
+             x:Class="AvaloniaDesigner.Parts.MenuControl" d:DataContext="{d:DesignInstance core:MainViewModel}">
     <Menu>
         <MenuItem Header="File">
             <MenuItem Header="New" Command="{Binding New}" />

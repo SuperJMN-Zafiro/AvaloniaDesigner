@@ -1,0 +1,51 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:design="clr-namespace:Zafiro.Avalonia.Design;assembly=Zafiro.Avalonia.Design"
+             xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
+             xmlns:converters="clr-namespace:Zafiro.Avalonia.Converters;assembly=Zafiro.Avalonia"
+             xmlns:graphics="clr-namespace:AvaloniaDesigner.Parts.Graphics"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaDesigner.Parts.EditorControl" d:DataContext="{d:DesignInstance viewModels:Document}">
+
+    <UserControl.Resources>
+        <converters:UriToBitmapConverter x:Key="UriToBitmapConverter" />
+    </UserControl.Resources>
+
+    <UserControl.DataTemplates>
+        <!--<DataTemplate DataType="avaloniaDesigner:Picture">
+            <Image Stretch="Fill" Source="{Binding Source, Converter={StaticResource UriToBitmapConverter}}" />
+        </DataTemplate>-->
+        <DataTemplate DataType="viewModels:Rectangle">
+            <graphics:RectangleControl />
+        </DataTemplate>
+        <DataTemplate DataType="viewModels:Ellipse">
+            <graphics:EllipseControl />
+        </DataTemplate>
+        <DataTemplate DataType="viewModels:Image">
+            <Image Stretch="Fill" Source="{Binding Source, Converter={StaticResource ImageConverter}}" />
+        </DataTemplate>
+        <DataTemplate DataType="viewModels:TextBox">
+            <graphics:TextBoxControl />
+        </DataTemplate>
+        <DataTemplate DataType="viewModels:NumericField">
+            <graphics:NumericFieldControl />
+        </DataTemplate>
+        <DataTemplate DataType="viewModels:TextField">
+            <graphics:TextFieldControl />
+        </DataTemplate>
+    </UserControl.DataTemplates>
+
+
+    <design:DesignerSurface
+                        x:Name="DesignerSurface"
+                        Items="{Binding Graphics}"
+                        Background="White"
+                        LeftBinding="{Binding Left}"
+                        TopBinding="{Binding Top}"
+                        WidthBinding="{Binding Width}"
+                        HeightBinding="{Binding Height}"
+                        SelectedItems="{Binding SelectedItems, Mode=TwoWay}"/>
+
+</UserControl>
