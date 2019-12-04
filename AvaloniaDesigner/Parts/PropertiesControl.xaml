@@ -48,7 +48,8 @@
                     <objectEditor:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="StrokeThickness" />
                 </oe:Editor.Key>
             </oe:Editor>-->
-            <!--<oe:Editor>
+
+            <oe:Editor>
                 <oe:Editor.Template>
                     <DataTemplate DataType="oe:PropertyItem">
                         <Slider Value="{Binding Value, Mode=TwoWay}" />
@@ -57,7 +58,7 @@
                 <oe:Editor.Key>
                     <coe:EditorKey TargetTypeString="Designer.Domain.Models.Color, Designer.Domain.Models"  />
                 </oe:Editor.Key>
-            </oe:Editor>-->
+            </oe:Editor>
         </oe:ObjectEditor.Editors>
     </oe:ObjectEditor>
 
