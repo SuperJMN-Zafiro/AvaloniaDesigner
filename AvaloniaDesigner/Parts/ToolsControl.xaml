@@ -1,0 +1,43 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
+             xmlns:converters="clr-namespace:Zafiro.Avalonia.Converters;assembly=Zafiro.Avalonia"
+             xmlns:localConverters="clr-namespace:AvaloniaDesigner.Converters"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaDesigner.Parts.ToolsControl"
+             d:DataContext="{d:DesignInstance viewModels:Document}">
+
+    <UserControl.Resources>
+        <converters:ValueConverterGroup x:Key="ToolTypeToImageConverter">
+            <localConverters:TypeNameConverter />
+            <localConverters:TypeNameToUriConverter />
+            <converters:UriToBitmapConverter />
+        </converters:ValueConverterGroup>
+
+    </UserControl.Resources>
+
+    <Border>
+        <ItemsControl Items="{Binding Tools}">
+
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Command="{Binding CreateCommand}" Background="Transparent"
+                            d:DataContext="{d:DesignInstance viewModels:Tool}">
+
+                        <Button.Content>
+                            <Image Width="25" Height="25" Source="{Binding Converter={StaticResource ToolTypeToImageConverter}}" />
+                        </Button.Content>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Border>
+</UserControl>

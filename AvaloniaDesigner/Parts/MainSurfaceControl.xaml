@@ -35,6 +35,8 @@
 
             <parts:PropertiesControl Grid.Column="3" />
 
+            <Button Grid.Column="1" Command="{Binding AddDocument}" Content="+" HorizontalAlignment="Right" VerticalAlignment="Top" />
+
         </Grid>
 
     </Grid>
