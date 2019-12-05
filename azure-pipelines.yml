@@ -15,17 +15,18 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- checkout: self 
+  submodules: recursive
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
+- task: DotNetCoreCLI@2
   inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: 'build'
+    projects: 'AvaloniaDesigner.sln'
 
 - task: VSTest@2
   inputs:
