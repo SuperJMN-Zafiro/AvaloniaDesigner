@@ -14,7 +14,7 @@
         <converters:UriToBitmapConverter x:Key="UriToBitmapConverter" />
     </UserControl.Resources>
 
-    <UserControl.DataTemplates>    
+    <UserControl.DataTemplates>
         <DataTemplate DataType="viewModels:Rectangle">
             <graphics:RectangleControl />
         </DataTemplate>
@@ -33,6 +33,9 @@
         <DataTemplate DataType="viewModels:TextField">
             <graphics:TextFieldControl />
         </DataTemplate>
+        <DataTemplate DataType="viewModels:Line">
+            <graphics:LineControl />
+        </DataTemplate>
     </UserControl.DataTemplates>
 
 
@@ -40,17 +43,21 @@
 
         <parts:ToolsControl />
 
-        <design:DesignerSurface
-            Grid.Row="1"
-            x:Name="DesignerSurface"
-            Items="{Binding Graphics}"
-            Background="White"
-            LeftBinding="{Binding Left}"
-            TopBinding="{Binding Top}"
-            WidthBinding="{Binding Width}"
-            HeightBinding="{Binding Height}"
-            SelectedItems="{Binding SelectedItems, Mode=TwoWay}" />
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
+            <design:DesignerSurface 
+                x:Name="DesignerSurface"
+                Items="{Binding Graphics}"
+                Background="White"
+                LeftBinding="{Binding Left}"
+                TopBinding="{Binding Top}"
+                WidthBinding="{Binding Width}"
+                HeightBinding="{Binding Height}"
+                SelectedItems="{Binding SelectedItems, Mode=TwoWay}" />
+
+        </ScrollViewer>
 
     </Grid>
+
 
 </UserControl>
