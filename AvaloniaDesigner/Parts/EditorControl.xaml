@@ -6,6 +6,7 @@
              xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
              xmlns:converters="clr-namespace:Zafiro.Avalonia.Converters;assembly=Zafiro.Avalonia"
              xmlns:graphics="clr-namespace:AvaloniaDesigner.Parts.Graphics"
+             xmlns:parts="clr-namespace:AvaloniaDesigner.Parts"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaDesigner.Parts.EditorControl" d:DataContext="{d:DesignInstance viewModels:Document}">
 
@@ -13,10 +14,7 @@
         <converters:UriToBitmapConverter x:Key="UriToBitmapConverter" />
     </UserControl.Resources>
 
-    <UserControl.DataTemplates>
-        <!--<DataTemplate DataType="avaloniaDesigner:Picture">
-            <Image Stretch="Fill" Source="{Binding Source, Converter={StaticResource UriToBitmapConverter}}" />
-        </DataTemplate>-->
+    <UserControl.DataTemplates>    
         <DataTemplate DataType="viewModels:Rectangle">
             <graphics:RectangleControl />
         </DataTemplate>
@@ -38,14 +36,21 @@
     </UserControl.DataTemplates>
 
 
-    <design:DesignerSurface
-                        x:Name="DesignerSurface"
-                        Items="{Binding Graphics}"
-                        Background="White"
-                        LeftBinding="{Binding Left}"
-                        TopBinding="{Binding Top}"
-                        WidthBinding="{Binding Width}"
-                        HeightBinding="{Binding Height}"
-                        SelectedItems="{Binding SelectedItems, Mode=TwoWay}"/>
+    <Grid RowDefinitions="Auto *">
+
+        <parts:ToolsControl />
+
+        <design:DesignerSurface
+            Grid.Row="1"
+            x:Name="DesignerSurface"
+            Items="{Binding Graphics}"
+            Background="White"
+            LeftBinding="{Binding Left}"
+            TopBinding="{Binding Top}"
+            WidthBinding="{Binding Width}"
+            HeightBinding="{Binding Height}"
+            SelectedItems="{Binding SelectedItems, Mode=TwoWay}" />
+
+    </Grid>
 
 </UserControl>
