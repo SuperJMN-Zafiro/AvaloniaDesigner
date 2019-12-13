@@ -14,18 +14,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.0-preview7" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.0-preview7" />
+    <PackageReference Include="Avalonia" Version="0.9.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.0" />
     <PackageReference Include="Grace" Version="7.1.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SuppaDesigner\Designer.Core\Designer.Core.csproj" />
-    <ProjectReference Include="..\SuppaDesigner\Designer.Domain.ViewModels\Designer.Domain.ViewModels.csproj" />
-    <ProjectReference Include="..\SuppaDesigner\Zafiro\Source\Zafiro.Avalonia.Design\Zafiro.Avalonia.Design.csproj" />
-    <ProjectReference Include="..\SuppaDesigner\Zafiro\Source\Zafiro.Avalonia\Zafiro.Avalonia.csproj" />
-    <ProjectReference Include="..\SuppaDesigner\Zafiro\Source\Zafiro.Core\Zafiro.Core.csproj" />
+    <ProjectReference Include="..\ZafiroDesigner.Core\Designer.Core\Designer.Core.csproj" />
+    <ProjectReference Include="..\ZafiroDesigner.Core\Designer.Domain.Models\Designer.Domain.Models.csproj" />
+    <ProjectReference Include="..\ZafiroDesigner.Core\Designer.Domain.ViewModels\Designer.Domain.ViewModels.csproj" />
+    <ProjectReference Include="..\ZafiroDesigner.Core\Zafiro\Source\Zafiro.Avalonia.Design\Zafiro.Avalonia.Design.csproj" />
+    <ProjectReference Include="..\ZafiroDesigner.Core\Zafiro\Source\Zafiro.Avalonia\Zafiro.Avalonia.csproj" />
+    <ProjectReference Include="..\ZafiroDesigner.Core\Zafiro\Source\Zafiro.Core\Zafiro.Core.csproj" />
   </ItemGroup>
 
 </Project>
