@@ -1,3 +1,3 @@
-[submodule "SuppaDesigner"]
-	path = SuppaDesigner
-	url = https://github.com/SuperJMN/SuppaDesigner.git
+[submodule "ZafiroDesigner.Core"]
+	path = ZafiroDesigner.Core
+	url = https://github.com/SuperJMN-Zafiro/ZafiroDesigner.Core.git

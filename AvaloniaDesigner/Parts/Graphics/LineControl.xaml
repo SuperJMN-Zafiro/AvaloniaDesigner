@@ -1,0 +1,21 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
+             xmlns:converters="clr-namespace:AvaloniaDesigner.Converters"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaDesigner.Parts.Graphics.LineControl">
+
+    <UserControl.Resources>
+        <converters:ModelPointConverter x:Key="ModelPointConverter" />
+    </UserControl.Resources>
+
+    <Canvas>
+        <Line Fill="{Binding Background, Converter={StaticResource ColorToBrushConverter}}"
+              StartPoint="{Binding StartPoint, Converter={StaticResource ModelPointConverter}}" 
+              EndPoint="{Binding EndPoint, Converter={StaticResource ModelPointConverter}}"
+              StrokeThickness="{Binding StrokeThickness}"
+              Stroke="{Binding Stroke, Converter={StaticResource ColorToBrushConverter}}" />
+    </Canvas>
+</UserControl>

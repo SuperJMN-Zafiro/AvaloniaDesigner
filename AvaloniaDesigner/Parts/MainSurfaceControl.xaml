@@ -19,7 +19,7 @@
 
                 <TabControl.ItemTemplate>
                     <DataTemplate>
-                        <HeaderedContentControl Header="{Binding Name}"/>
+                        <TextBlock Text="{Binding Name}"/>
                     </DataTemplate>
                 </TabControl.ItemTemplate>
 

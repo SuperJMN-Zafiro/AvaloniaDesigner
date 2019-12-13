@@ -7,14 +7,23 @@
              xmlns:localConverters="clr-namespace:AvaloniaDesigner.Converters"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaDesigner.Parts.ToolsControl"
+             xmlns:img="clr-namespace:Avalonia.Media.Imaging;assembly=Avalonia.Visuals"
              d:DataContext="{d:DesignInstance viewModels:Document}">
 
     <UserControl.Resources>
-        <converters:ValueConverterGroup x:Key="ToolTypeToImageConverter">
+
+        <converters:PipelineConverter x:Key="ToolTypeToImageConverter">
             <localConverters:TypeNameConverter />
-            <localConverters:TypeNameToUriConverter />
-            <converters:UriToBitmapConverter />
-        </converters:ValueConverterGroup>
+            <converters:StringToResourceConverter>
+                <converters:StringToResourceConverter.Resources>
+                    <img:IBitmap x:Key="EllipseTool">/Assets/Tools/Ellipse.png</img:IBitmap>
+                    <img:IBitmap x:Key="ImageTool">/Assets/Tools/Image.png</img:IBitmap>
+                    <img:IBitmap x:Key="RectangleTool">/Assets/Tools/Rectangle.png</img:IBitmap>
+                    <img:IBitmap x:Key="LineTool">/Assets/Tools/Line.png</img:IBitmap>
+                    <img:IBitmap x:Key="TextTool">/Assets/Tools/Text.png</img:IBitmap>
+                </converters:StringToResourceConverter.Resources>
+            </converters:StringToResourceConverter>
+        </converters:PipelineConverter>
 
     </UserControl.Resources>
 
