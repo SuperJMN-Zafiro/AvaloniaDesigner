@@ -13,6 +13,7 @@
         <converters:ChangeSignConverter x:Key="VerticalOffsetConverter" />
         <converters:ZeroToCollapsedConverter x:Key="ZeroToCollapsedConverter" />
         <converters:DoubleToCornerRadiusConverter x:Key="DoubleToCornerRadiusConverter" />
+        <converters:ModelColorToColorConverter x:Key="ModelColorToColorConverter" />
         <cc:ByteArrayToImageConverter x:Key="ImageConverter" />
 
     </Application.Resources>
@@ -22,6 +23,7 @@
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
         <StyleInclude Source="avares://Zafiro.Avalonia/Themes/Default.xaml" />
         <StyleInclude Source="avares://Zafiro.Avalonia.Design/Themes/Default.xaml" />
+        <StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.xaml"/>
 
         <Style Selector="HeaderedContentControl">
             <Setter Property="Template">

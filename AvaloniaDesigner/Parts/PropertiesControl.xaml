@@ -6,6 +6,7 @@
              xmlns:oe="clr-namespace:Zafiro.Avalonia.ObjectEditor;assembly=Zafiro.Avalonia"
              xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
              xmlns:coe="clr-namespace:Zafiro.Core.ObjectEditor;assembly=Zafiro.Core"
+             xmlns:cp="clr-namespace:ThemeEditor.Controls.ColorPicker;assembly=ThemeEditor.Controls.ColorPicker"
              x:Class="AvaloniaDesigner.Parts.PropertiesControl"
              d:DataContext="{d:DesignInstance viewModels:Project}">
     <UserControl.Styles>
@@ -49,16 +50,56 @@
                         <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="StrokeThickness" />
                     </oe:Editor.Key>
                 </oe:Editor>
+                
                 <oe:Editor>
                     <oe:Editor.Template>
-                        <DataTemplate DataType="oe:PropertyItem">
-                            <Border Background="{Binding Value, Converter={StaticResource ColorToBrushConverter}}"></Border>
+                        <DataTemplate>
+                            <Slider Minimum="0" Maximum="1" LargeChange="0.2" TickFrequency="0.1" Value="{Binding Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </oe:Editor.Template>
+                    <oe:Editor.Key>
+                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="BackgroundTint" />
+                    </oe:Editor.Key>
+                </oe:Editor>
+
+                <oe:Editor>
+                    <oe:Editor.Template>
+                        <DataTemplate>
+                            <Slider Value="{Binding Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </oe:Editor.Template>
+                    <oe:Editor.Key>
+                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="StrokeThickness" />
+                    </oe:Editor.Key>
+                </oe:Editor>
+
+                <oe:Editor>
+                    <oe:Editor.Template>
+                        <DataTemplate>
+                            <Slider Value="{Binding Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </oe:Editor.Template>
+                    <oe:Editor.Key>
+                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="CornerRadius" />
+                    </oe:Editor.Key>
+                </oe:Editor>
+
+                <oe:Editor>
+                    <oe:Editor.Template>
+                        <DataTemplate>
+                            <Expander>
+                                <Expander.Header>
+                                    <Border Width="100"  Height="24" Background="{Binding Value, Converter={StaticResource ColorToBrushConverter}}" />
+                                </Expander.Header>
+                                <cp:ColorPicker Color="{Binding Value, Converter={StaticResource ModelColorToColorConverter}, Mode=TwoWay}" />
+                            </Expander>
                         </DataTemplate>
                     </oe:Editor.Template>
                     <oe:Editor.Key>
                         <coe:EditorKey TargetTypeString="Designer.Domain.Models.Color, Designer.Domain.Models"  />
                     </oe:Editor.Key>
                 </oe:Editor>
+
             </oe:EditorCollection>
         </oe:ObjectEditor.Editors>
     </oe:ObjectEditor>
