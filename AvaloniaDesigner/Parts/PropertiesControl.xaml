@@ -87,9 +87,9 @@
                 <oe:Editor>
                     <oe:Editor.Template>
                         <DataTemplate>
-                            <Expander>
+                            <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                                 <Expander.Header>
-                                    <Border Width="100"  Height="24" Background="{Binding Value, Converter={StaticResource ColorToBrushConverter}}" />
+                                    <Border Height="24" Background="{Binding Value, Converter={StaticResource ColorToBrushConverter}}" />
                                 </Expander.Header>
                                 <cp:ColorPicker Color="{Binding Value, Converter={StaticResource ModelColorToColorConverter}, Mode=TwoWay}" />
                             </Expander>
