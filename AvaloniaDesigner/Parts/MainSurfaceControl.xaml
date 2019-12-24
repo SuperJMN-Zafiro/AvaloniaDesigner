@@ -2,12 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:parts="clr-namespace:AvaloniaDesigner.Parts"
              xmlns:core="clr-namespace:Designer.Core;assembly=Designer.Core"
              xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
+             xmlns:parts="clr-namespace:Designer.Parts"
              d:DataContext="{d:DesignInstance core:MainViewModel}"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AvaloniaDesigner.Parts.MainSurfaceControl">
+             x:Class="Designer.Parts.MainSurfaceControl">
 
     <Grid RowDefinitions="Auto *">
 

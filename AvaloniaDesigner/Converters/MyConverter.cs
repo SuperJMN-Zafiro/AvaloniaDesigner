@@ -3,7 +3,7 @@ using Avalonia.Media;
 using Color = Designer.Domain.Models.Color;
 using CornerRadius = Avalonia.CornerRadius;
 
-namespace AvaloniaDesigner.Converters
+namespace Designer.Converters
 {
     public static class MyConverter
     {

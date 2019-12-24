@@ -4,7 +4,7 @@ using Avalonia.Data.Converters;
 using Avalonia.Media;
 using Color = Designer.Domain.Models.Color;
 
-namespace AvaloniaDesigner.Converters
+namespace Designer.Converters
 {
     public class ColorToBrushConverter : IValueConverter
     {

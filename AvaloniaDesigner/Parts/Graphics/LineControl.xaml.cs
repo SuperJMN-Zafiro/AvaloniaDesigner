@@ -1,8 +1,7 @@
-﻿using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaDesigner.Parts.Graphics
+namespace Designer.Parts.Graphics
 {
     public class LineControl : UserControl
     {

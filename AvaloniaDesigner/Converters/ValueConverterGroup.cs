@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using Avalonia.Data.Converters;
 
-namespace AvaloniaDesigner.Converters
+namespace Designer.Converters
 {
     public class ValueConverterGroup : List<IValueConverter>, IValueConverter
     {

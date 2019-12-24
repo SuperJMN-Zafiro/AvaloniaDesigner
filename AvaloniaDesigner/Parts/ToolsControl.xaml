@@ -4,16 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
              xmlns:converters="clr-namespace:Zafiro.Avalonia.Converters;assembly=Zafiro.Avalonia"
-             xmlns:localConverters="clr-namespace:AvaloniaDesigner.Converters"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AvaloniaDesigner.Parts.ToolsControl"
+             x:Class="Designer.Parts.ToolsControl"
              xmlns:img="clr-namespace:Avalonia.Media.Imaging;assembly=Avalonia.Visuals"
+             xmlns:converters1="clr-namespace:Designer.Converters"
              d:DataContext="{d:DesignInstance viewModels:Document}">
 
     <UserControl.Resources>
 
         <converters:PipelineConverter x:Key="ToolTypeToImageConverter">
-            <localConverters:TypeNameConverter />
+            <converters1:TypeNameConverter />
             <converters:StringToResourceConverter>
                 <converters:StringToResourceConverter.Resources>
                     <img:IBitmap x:Key="EllipseTool">/Assets/Tools/Ellipse.png</img:IBitmap>

@@ -3,7 +3,7 @@ using System.Globalization;
 using Avalonia.Data.Converters;
 using Designer.Domain.Models;
 
-namespace AvaloniaDesigner.Converters
+namespace Designer.Converters
 {
     public class ColorConverter : IValueConverter
     {

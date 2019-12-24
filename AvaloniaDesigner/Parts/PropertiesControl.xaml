@@ -7,101 +7,85 @@
              xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
              xmlns:coe="clr-namespace:Zafiro.Core.ObjectEditor;assembly=Zafiro.Core"
              xmlns:cp="clr-namespace:ThemeEditor.Controls.ColorPicker;assembly=ThemeEditor.Controls.ColorPicker"
-             x:Class="AvaloniaDesigner.Parts.PropertiesControl"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:domain="clr-namespace:Designer.Domain.Models;assembly=Designer.Domain.Models"
+             x:Class="Designer.Parts.PropertiesControl"
              d:DataContext="{d:DesignInstance viewModels:Project}">
-    <UserControl.Styles>
-        <Style Selector="HeaderedContentControl">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Border BorderBrush="Black" Background="White" BorderThickness="1">
-                            <Grid RowDefinitions="Auto *">
-                                <ContentPresenter Padding="5" HorizontalContentAlignment="Center" TextBlock.FontWeight="Bold" Background="LightBlue" Content="{TemplateBinding Header}" />
-                                <ContentPresenter Grid.Row="1" Content="{TemplateBinding Content}" />
-                            </Grid>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </UserControl.Styles>
+  <UserControl.Styles>
+    <Style Selector="HeaderedContentControl">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <Border BorderBrush="Black" Background="White" BorderThickness="1">
+              <Grid RowDefinitions="Auto *">
+                <ContentPresenter Padding="5" HorizontalContentAlignment="Center" TextBlock.FontWeight="Bold" Background="LightBlue" Content="{TemplateBinding Header}" />
+                <ContentPresenter Grid.Row="1" Content="{TemplateBinding Content}" />
+              </Grid>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Styles>
 
-    <oe:ObjectEditor Margin="4" SelectedItems="{Binding SelectedDocument.SelectedItems}">
+  <oe:ObjectEditor Margin="4" SelectedItems="{Binding SelectedDocument.SelectedItems}">
 
-        <oe:ObjectEditor.Editors>
-            <oe:EditorCollection>
-                <oe:Editor>
-                    <oe:Editor.Template>
-                        <DataTemplate DataType="oe:PropertyItem">
-                            <Slider Minimum="0" Maximum="1" LargeChange="0.2" TickFrequency="0.1" Value="{Binding Value, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </oe:Editor.Template>
-                    <oe:Editor.Key>
-                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="BackgroundTint" />
-                    </oe:Editor.Key>
-                </oe:Editor>
-                <oe:Editor>
-                    <oe:Editor.Template>
-                        <DataTemplate DataType="oe:PropertyItem">
-                            <Slider Value="{Binding Value, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </oe:Editor.Template>
-                    <oe:Editor.Key>
-                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="StrokeThickness" />
-                    </oe:Editor.Key>
-                </oe:Editor>
-                
-                <oe:Editor>
-                    <oe:Editor.Template>
-                        <DataTemplate>
-                            <Slider Minimum="0" Maximum="1" LargeChange="0.2" TickFrequency="0.1" Value="{Binding Value, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </oe:Editor.Template>
-                    <oe:Editor.Key>
-                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="BackgroundTint" />
-                    </oe:Editor.Key>
-                </oe:Editor>
+    <oe:ObjectEditor.EditorDefinitions>
+      <oe:EditorDefinitionCollection>
+        <oe:EditorDefinition>
 
-                <oe:Editor>
-                    <oe:Editor.Template>
-                        <DataTemplate>
-                            <Slider Value="{Binding Value, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </oe:Editor.Template>
-                    <oe:Editor.Key>
-                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="StrokeThickness" />
-                    </oe:Editor.Key>
-                </oe:Editor>
+          <oe:EditorDefinition.Template>
+            <DataTemplate DataType="oe:PropertyItem">
+              <Slider Minimum="0" Maximum="1" LargeChange="0.2" TickFrequency="0.1" Value="{Binding Value, Mode=TwoWay}" />
+            </DataTemplate>
+          </oe:EditorDefinition.Template>
 
-                <oe:Editor>
-                    <oe:Editor.Template>
-                        <DataTemplate>
-                            <Slider Value="{Binding Value, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </oe:Editor.Template>
-                    <oe:Editor.Key>
-                        <coe:EditorKey TargetTypeString="System.Double, mscorlib" PropertyName="CornerRadius" />
-                    </oe:Editor.Key>
-                </oe:Editor>
+          <oe:EditorDefinition.Key>
+            <oe:EditorDefinitionKey TargetType="{x:Type system:Double}" Properties="BackgroundTint" />
+          </oe:EditorDefinition.Key>
 
-                <oe:Editor>
-                    <oe:Editor.Template>
-                        <DataTemplate>
-                            <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
-                                <Expander.Header>
-                                    <Border Height="24" Background="{Binding Value, Converter={StaticResource ColorToBrushConverter}}" />
-                                </Expander.Header>
-                                <cp:ColorPicker Color="{Binding Value, Converter={StaticResource ModelColorToColorConverter}, Mode=TwoWay}" />
-                            </Expander>
-                        </DataTemplate>
-                    </oe:Editor.Template>
-                    <oe:Editor.Key>
-                        <coe:EditorKey TargetTypeString="Designer.Domain.Models.Color, Designer.Domain.Models"  />
-                    </oe:Editor.Key>
-                </oe:Editor>
+        </oe:EditorDefinition>
 
-            </oe:EditorCollection>
-        </oe:ObjectEditor.Editors>
-    </oe:ObjectEditor>
+        <oe:EditorDefinition>
+          <oe:EditorDefinition.Template>
+            <DataTemplate>
+              <Slider Value="{Binding Value, Mode=TwoWay}" />
+            </DataTemplate>
+          </oe:EditorDefinition.Template>
+          <oe:EditorDefinition.Key>
+            <oe:EditorDefinitionKey TargetType="{x:Type system:Double}" Properties="StrokeThickness, CornerRadius" />
+          </oe:EditorDefinition.Key>
+        </oe:EditorDefinition>
+
+        <oe:EditorDefinition>
+          <oe:EditorDefinition.Template>
+            <DataTemplate>
+              <Slider Minimum="0" Maximum="1" LargeChange="0.2" TickFrequency="0.1" Value="{Binding Value, Mode=TwoWay}" />
+            </DataTemplate>
+          </oe:EditorDefinition.Template>
+          <oe:EditorDefinition.Key>
+            <oe:EditorDefinitionKey TargetType="{x:Type system:Double}" Properties="BackgroundTint" />
+          </oe:EditorDefinition.Key>
+        </oe:EditorDefinition>
+
+        <oe:EditorDefinition>
+          <oe:EditorDefinition.Template>
+            <DataTemplate>
+              <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <Expander.Header>
+                  <Border Height="24" Background="{Binding Value, Converter={StaticResource ColorToBrushConverter}}" />
+                </Expander.Header>
+                <cp:ColorPicker Color="{Binding Value, Converter={StaticResource ModelColorToColorConverter}, Mode=TwoWay}" />
+              </Expander>
+            </DataTemplate>
+          </oe:EditorDefinition.Template>
+          <oe:EditorDefinition.Key>
+            <oe:EditorDefinitionKey TargetType="{x:Type domain:Color}" />
+          </oe:EditorDefinition.Key>
+        </oe:EditorDefinition>
+      </oe:EditorDefinitionCollection>
+
+    </oe:ObjectEditor.EditorDefinitions>
+  </oe:ObjectEditor>
 
 </UserControl>

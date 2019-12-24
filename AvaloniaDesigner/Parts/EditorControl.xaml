@@ -5,10 +5,10 @@
              xmlns:design="clr-namespace:Zafiro.Avalonia.Design;assembly=Zafiro.Avalonia.Design"
              xmlns:viewModels="clr-namespace:Designer.Domain.ViewModels;assembly=Designer.Domain.ViewModels"
              xmlns:converters="clr-namespace:Zafiro.Avalonia.Converters;assembly=Zafiro.Avalonia"
-             xmlns:graphics="clr-namespace:AvaloniaDesigner.Parts.Graphics"
-             xmlns:parts="clr-namespace:AvaloniaDesigner.Parts"
+             xmlns:graphics="clr-namespace:Designer.Parts.Graphics"
+             xmlns:parts="clr-namespace:Designer.Parts"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AvaloniaDesigner.Parts.EditorControl" d:DataContext="{d:DesignInstance viewModels:Document}">
+             x:Class="Designer.Parts.EditorControl" d:DataContext="{d:DesignInstance viewModels:Document}">
 
     <UserControl.Resources>
         <converters:UriToBitmapConverter x:Key="UriToBitmapConverter" />
@@ -53,6 +53,7 @@
                 TopBinding="{Binding Top}"
                 WidthBinding="{Binding Width}"
                 HeightBinding="{Binding Height}"
+                AngleBinding="{Binding Angle}"
                 SelectedItems="{Binding SelectedItems, Mode=TwoWay}" />
 
         </ScrollViewer>

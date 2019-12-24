@@ -4,7 +4,7 @@ using Avalonia;
 using Avalonia.Data.Converters;
 using Point = Designer.Domain.Models.Point;
 
-namespace AvaloniaDesigner.Converters
+namespace Designer.Converters
 {
     public class ModelPointConverter : IValueConverter
     {

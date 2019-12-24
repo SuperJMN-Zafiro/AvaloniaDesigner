@@ -3,7 +3,7 @@ using System.Globalization;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
 
-namespace AvaloniaDesigner.Converters
+namespace Designer.Converters
 {
     public class WindowsColorToBrushConverter : IValueConverter
     {

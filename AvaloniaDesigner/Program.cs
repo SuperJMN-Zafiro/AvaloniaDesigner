@@ -1,10 +1,9 @@
-﻿using System;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Logging.Serilog;
 using Avalonia.ReactiveUI;
 
-namespace AvaloniaDesigner
+namespace Designer
 {
     class Program
     {

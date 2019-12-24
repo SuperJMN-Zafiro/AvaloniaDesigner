@@ -14,7 +14,7 @@ using Zafiro.Avalonia;
 using Zafiro.Core;
 using Zafiro.Core.Files;
 
-namespace AvaloniaDesigner
+namespace Designer
 {
     public class Composition
     {

@@ -3,7 +3,7 @@ using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace AvaloniaDesigner.Converters
+namespace Designer.Converters
 {
     public class TypeNameToUriConverter : IValueConverter
     {

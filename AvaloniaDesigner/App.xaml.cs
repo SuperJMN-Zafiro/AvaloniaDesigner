@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaDesigner
+namespace Designer
 {
     public class App : Application
     {

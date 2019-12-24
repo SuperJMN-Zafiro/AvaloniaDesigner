@@ -1,12 +1,12 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:avaloniaDesigner="clr-namespace:AvaloniaDesigner"
-             xmlns:converters="clr-namespace:AvaloniaDesigner.Converters"
              xmlns:cc="clr-namespace:Zafiro.Avalonia.Converters;assembly=Zafiro.Avalonia"
-             x:Class="AvaloniaDesigner.App">
+             xmlns:designer="clr-namespace:Designer"
+             xmlns:converters="clr-namespace:Designer.Converters"
+             x:Class="Designer.App">
 
     <Application.Resources>
-        <avaloniaDesigner:Composition x:Key="Composition" />
+        <designer:Composition x:Key="Composition" />
         <converters:ColorToBrushConverter x:Key="ColorToBrushConverter" />
         <converters:ThicknessConverter x:Key="ThicknessConverter" />
         <converters:CornerRadiusConverter x:Key="CornerRadiusConverter" />
@@ -25,7 +25,7 @@
         <StyleInclude Source="avares://Zafiro.Avalonia/Themes/Default.xaml" />
         <StyleInclude Source="avares://Zafiro.Avalonia.Design/Themes/Default.xaml" />
         <StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.xaml"/>
-        <StyleInclude Source="avares://AvaloniaDesigner/Styles.xaml"/>
+        <StyleInclude Source="avares://Designer/Styles.xaml"/>
         
         <Style Selector="HeaderedContentControl">
             <Setter Property="Template">
