@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "Ubuntu",
+    "Settings": {
+      "DestinationPath": "/home/jmn/DotNetApps/AvaloniaDesigner",
+      "Host": "ubuntu",
+      "AssemblyName": "Designer",
+      "Framework": "netcoreapp2.1",
+      "Display": ":0.0",
+      "RunAfterDeployment": true,
+      "TargetDevice": "GenericLinux64"
+    }
+  }
+]
