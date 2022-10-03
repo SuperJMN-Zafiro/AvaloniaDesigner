@@ -11,7 +11,7 @@ namespace Designer
         {
             InitializeComponent();
 #if DEBUG
-            this.AttachDevTools(KeyGesture.Parse("F1"));
+            
 #endif
         }
 
