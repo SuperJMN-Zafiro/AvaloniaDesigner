@@ -24,7 +24,7 @@
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
         <StyleInclude Source="avares://Zafiro.Avalonia/Themes/Default.xaml" />
         <StyleInclude Source="avares://Zafiro.Avalonia.Design/Themes/Default.xaml" />
-        <StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.xaml"/>
+        <StyleInclude Source="resm:Avalonia.Themes.Default.DefaultTheme.xaml?assembly=Avalonia.Themes.Default"/>
         <StyleInclude Source="avares://Designer/Styles.xaml"/>
         
         <Style Selector="HeaderedContentControl">
