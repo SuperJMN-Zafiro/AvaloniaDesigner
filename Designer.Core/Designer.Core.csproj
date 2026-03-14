@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
     <PackageReference Include="ExtendedXmlSerializer" Version="3.7.6" />
     <PackageReference Include="Grace" Version="7.2.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
